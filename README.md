@@ -47,6 +47,8 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 
 ## Instructions
+export PATH=/opt/homebrew/bin:$PATH
+brew install node 
 
 
 npx create-react-app portfolio  --template typescript
