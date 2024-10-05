@@ -11,7 +11,7 @@ const MenuButton = styled.div<{ isOpen: boolean }>`
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   border: 3px solid #333;
-
+  left: calc(100% - 80px);
   ${props =>
         props.isOpen &&
         css`

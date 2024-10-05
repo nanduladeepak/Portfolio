@@ -114,3 +114,13 @@ We suggest that you begin by typing:
 You had a `README.md` file, we renamed it to `README.old.md`
 
 Happy hacking!
+
+
+## Next steps:
+- Run these commands in your terminal to add Homebrew to your PATH:
+    echo >> /Users/deepaknandula/.zprofile
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/deepaknandula/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+- Run brew help to get started
+- Further documentation:
+    https://docs.brew.sh

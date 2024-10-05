@@ -19,8 +19,8 @@ interface TabProps {
 const TabContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 300px; /* Adjust as needed */
-`;
+  `;
+//   max-width: 300px; /* Adjust as needed */
 
 const TabHeader = styled.div<{ isMobile: boolean }>`
   display: ${({ isMobile }) => (isMobile ? 'none' : 'flex')};
