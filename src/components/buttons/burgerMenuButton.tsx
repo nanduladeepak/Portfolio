@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 
-const MenuButton = styled.div<{ isOpen: boolean }>`
+const MenuButton = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
@@ -12,16 +12,13 @@ const MenuButton = styled.div<{ isOpen: boolean }>`
   transition: all 0.3s ease-in-out;
   border: 3px solid #333;
   left: calc(100% - 80px);
-  ${props =>
-        props.isOpen &&
-        css`
-      transform: translate(-50px);
-      background: transparent;
-      box-shadow: none;
-    `}
+  // &:hover {
+  //   background: transparent;
+  //   box-shadow: none;
+  // }
 `;
 
-const MenuButtonBurger = styled.div`
+const MenuButtonBurger = styled.div<{ isOpen: boolean }>`
   width: 50px;
   height: 6px;
   background: #333;
@@ -53,23 +50,27 @@ const MenuButtonBurger = styled.div`
     transform: translateY(16px);
   }
 
-  ${MenuButton}:hover & {
-    background: red; /* Example of hover effect */
-  }
+  // ${MenuButton}:hover & {
+  //   background: red; /* Example of hover effect */
+  // }
 
-  ${MenuButton}.isOpen & {
-    transform: translate(-50px);
-    background: transparent;
-    box-shadow: none;
-  }
+  ${props =>
+    props.isOpen &&
+    css`
+      transform: translate(-50px);
+      background: transparent;
+      box-shadow: none;
 
-  ${MenuButton}.isOpen &::before {
-    transform: rotate(45deg) translate(35px, -35px);
-  }
-
-  ${MenuButton}.isOpen &::after {
-    transform: rotate(-45deg) translate(35px, -35px);
-  }
+      &::before {
+        transform: rotate(45deg) translate(35px, -35px);
+        background: red;
+      }
+      
+      &::after {
+        transform: rotate(-45deg) translate(35px, 35px);
+        background: red;
+      }
+    ß`}
 `;
 
 
@@ -80,7 +81,7 @@ interface BurgerMenuButtonProps {
 
 const BurgerMenuButton: React.FC<BurgerMenuButtonProps> = ({ isOpen, onClickCallback }) => {
     return (
-        <MenuButton isOpen={isOpen} onClick={onClickCallback}><MenuButtonBurger /></MenuButton>
+        <MenuButton onClick={onClickCallback}><MenuButtonBurger isOpen={isOpen} /></MenuButton>
     )
 }
 
